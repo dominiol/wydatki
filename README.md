@@ -14,7 +14,7 @@ After installing composer dependencies, you have to modify `.env` file: append i
 DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
 PASSWORD_MD5_HASH=098f6bcd4621d373cade4e832627b4f6
 ```
-In this example 098f6bcd4621d373cade4e832627b4f6 equals to md5("test"). You can also specify an environment (production or development):
+In this example `098f6bcd4621d373cade4e832627b4f6` equals to `md5("test")`. You can also specify an environment (production or development):
 ```$xslt
 #APP_ENV=dev
 APP_ENV=prod
