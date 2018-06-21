@@ -18,12 +18,31 @@ body {
     margin-top: 20px;
 }
 
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
 table.transactions-list tr:first-child td {
     border-top: 0 !important;
 }
 
+.transactions-list p {
+    margin: 0;
+}
+
+.transaction-value {
+    font-weight: bold;
+    margin-top: 5px !important;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
 .transaction-value-positive {
     color: green;
+}
+
+.transaction-value-positive:before {
+    content: '+';
 }
 
 .transaction-value-negative {
@@ -45,4 +64,9 @@ table.transactions-list tr:first-child td {
 
 .add-transaction {
     margin-bottom: 20px;
+}
+
+.footer-text {
+    font-size: 10px;
+    color: #444;
 }

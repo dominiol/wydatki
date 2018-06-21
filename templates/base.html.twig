@@ -21,9 +21,12 @@
 
         <div id="main-container" class="container-fluid">
             {% block body %}{% endblock %}
+            {% include '_partials/footer.html.twig' %}
         </div>
 
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
+        {% block scripts %}{% endblock %}
     </body>
 </html>

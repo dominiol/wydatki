@@ -19,10 +19,13 @@
                                 {% for transaction in transactions %}
                                     <tr>
                                         <td>
-                                            {{ transaction.title }}
+                                            <p><strong>{{ transaction.title }}</strong></p>
+                                            <p><small>{{ transaction.createdAt|date('Y-m-d H:i:s') }}</small></p>
                                         </td>
-                                        <td class="text-right transaction-value-{% if transaction.value > 0 %}positive{% else %}negative{% endif %}">
-                                            {{ transaction.value }} PLN
+                                        <td class="text-right">
+                                            <p class="transaction-value transaction-value-{% if transaction.value > 0 %}positive{% else %}negative{% endif %}">
+                                                {{ transaction.value }} PLN
+                                            </p>
                                         </td>
                                     </tr>
                                 {% endfor %}

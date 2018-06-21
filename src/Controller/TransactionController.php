@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class TransactionController extends Controller
 {
     /**
-     * @Route("/transaction/add", name="transaction_add")
+     * @Route("/w/transaction/add", name="transaction_add")
      */
     public function add(Request $request)
     {
@@ -42,7 +42,7 @@ class TransactionController extends Controller
     }
 
     /**
-     * @Route("/transaction/list", name="transaction_list")
+     * @Route("/w/transaction/list", name="transaction_list")
      */
     public function list(TransactionManager $transactionManager)
     {
@@ -54,10 +54,14 @@ class TransactionController extends Controller
     }
 
     /**
-     * @Route("/transaction/list/planned", name="transaction_list_planned")
+     * @Route("/w/transaction/list/planned", name="transaction_list_planned")
      */
-    public function listPlanned()
+    public function listPlanned(TransactionManager $transactionManager)
     {
-        return $this->render('transaction/list_planned.html.twig');
+        $transactions = $transactionManager->getPlannedTransactions();
+
+        return $this->render('transaction/list_planned.html.twig', [
+            'transactions' => $transactions
+        ]);
     }
 }

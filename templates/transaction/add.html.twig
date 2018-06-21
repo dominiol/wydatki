@@ -22,7 +22,19 @@
                         <div class="form-group">
                             {{ form_errors(form.value) }}
                             <label>Kwota (PLN)</label>
-                            {{ form_widget(form.value, {attr: {class: 'form-control'}}) }}
+                            {{ form_widget(form.value, {attr: {class: 'form-control value-field'}}) }}
+                        </div>
+                        <div class="btn-group btn-group-justified main-navigation" role="group" aria-label="...">
+                            <div class="btn-group" role="group">
+                                <button id="value-positive" class="btn btn-success">
+                                    Przychód
+                                </button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button id="value-negative" class="btn btn-danger">
+                                    Wydatek
+                                </button>
+                            </div>
                         </div>
                         <div class="form-group">
                             {{ form_errors(form.isPlanned) }}
@@ -38,4 +50,23 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $('#value-positive').click(function(e) {
+            e.preventDefault();
+
+            if ($('.value-field').val()[0] == '-') {
+                $('.value-field').val($('.value-field').val().slice(1));
+            }
+        });
+        $('#value-negative').click(function(e) {
+            e.preventDefault();
+
+            if ($('.value-field').val()[0] != '-') {
+                $('.value-field').val('-' + $('.value-field').val());
+            }
+        });
+    </script>
 {% endblock %}

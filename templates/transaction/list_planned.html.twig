@@ -14,7 +14,23 @@
                 </div>
                 <div class="panel-body">
                     {% if transactions is defined and transactions %}
-
+                        <table class="table transactions-list table-striped">
+                            <tbody>
+                            {% for transaction in transactions %}
+                                <tr>
+                                    <td>
+                                        <p><strong>{{ transaction.title }}</strong></p>
+                                        <p><small>{{ transaction.createdAt|date('Y-m-d H:i:s') }}</small></p>
+                                    </td>
+                                    <td class="text-right">
+                                        <p class="transaction-value transaction-value-{% if transaction.value > 0 %}positive{% else %}negative{% endif %}">
+                                            {{ transaction.value }} PLN
+                                        </p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
                     {% else %}
                         <div class="alert alert-info">
                             <p>Brak transakcji.</p>

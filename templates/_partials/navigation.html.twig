@@ -1,15 +1,20 @@
 
 <div class="row">
-    <div class="col-md-2 col-md-offset-8 col-xs-12">
-        <a href="{{ path('transaction_add') }}" class="btn btn-success btn-fullwidth add-transaction">
-            <span class="glyphicon glyphicon-plus"></span>
-            Dodaj transakcję
-        </a>
+    <div class="col-md-8 col-md-offset-2 col-xs-12 text-right">
+        <div class="margin-bottom">
+            <a href="{{ path('transaction_add') }}" class="btn btn-default btn-success">
+                <span class="glyphicon glyphicon-plus"></span>
+                Dodaj transakcję
+            </a>
+            <a href="{{ path('logout') }}" class="btn btn-default">
+                <span class="glyphicon glyphicon-off"></span>
+            </a>
+        </div>
     </div>
     <div class="col-md-8 col-md-offset-2 col-xs-12">
         <div class="btn-group btn-group-justified main-navigation" role="group" aria-label="...">
             <div class="btn-group" role="group">
-                <a href="{{ path('index') }}" class="btn btn-default {% if app.request.get('_route') == 'index' %}btn-primary{% endif %}">
+                <a href="{{ path('summary') }}" class="btn btn-default {% if app.request.get('_route') == 'summary' %}btn-primary{% endif %}">
                     <span class="glyphicon glyphicon-th-list"></span> Podsumowanie
                 </a>
             </div>
