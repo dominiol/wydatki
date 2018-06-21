@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Podsumowanie{% endblock %}
+
+{% block body %}
+    {% include '_partials/navigation.html.twig' %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                    Podsumowanie wydatków
+                </div>
+                <div class="panel-body">
+                    <div class="summary-item">
+                        <div class="row">
+                            <div class="col-xs-6 text-left">
+                                Aktualny stan konta
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <strong>{{ balance }} PLN</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="row">
+                            <div class="col-xs-6 text-left">
+                                Szacowany stan konta
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <strong>{{ estimatedBalance }} PLN</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="row">
+                            <div class="col-xs-6 text-left">
+                                Dozwolone wydatki na dzień
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <strong>{{ allowedPricePerDay }} PLN</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

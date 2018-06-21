@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-8 col-xs-12">
+        <a href="{{ path('transaction_add') }}" class="btn btn-success btn-fullwidth add-transaction">
+            <span class="glyphicon glyphicon-plus"></span>
+            Dodaj transakcję
+        </a>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-xs-12">
+        <div class="btn-group btn-group-justified main-navigation" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <a href="{{ path('index') }}" class="btn btn-default {% if app.request.get('_route') == 'index' %}btn-primary{% endif %}">
+                    <span class="glyphicon glyphicon-th-list"></span> Podsumowanie
+                </a>
+            </div>
+            <div class="btn-group" role="group">
+                <a href="{{ path('transaction_list') }}" class="btn btn-default {% if app.request.get('_route') == 'transaction_list' %}btn-primary{% endif %}">
+                    <span class="glyphicon glyphicon-euro"></span> Transakcje
+                </a>
+            </div>
+            <div class="btn-group" role="group">
+                <a href="{{ path('transaction_list_planned') }}" class="btn btn-default {% if app.request.get('_route') == 'transaction_list_planned' %}btn-primary{% endif %}">
+                    <span class="glyphicon glyphicon-calendar"></span> Zaplanowane
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

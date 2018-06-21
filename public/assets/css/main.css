@@ -1,0 +1,48 @@
+body {
+    background-color: #eee;
+}
+
+#main-container {
+    margin-top: 20px;
+}
+
+.panel {
+    box-shadow: 0 0 5px #aaa;
+}
+
+.main-navigation {
+    margin-bottom: 20px;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+table.transactions-list tr:first-child td {
+    border-top: 0 !important;
+}
+
+.transaction-value-positive {
+    color: green;
+}
+
+.transaction-value-negative {
+    color: red;
+}
+
+.summary-item {
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
+.summary-item:not(:first-child) {
+    border-top: 1px dashed #aaa;
+}
+
+.btn-fullwidth {
+    width: 100% !important;
+}
+
+.add-transaction {
+    margin-bottom: 20px;
+}

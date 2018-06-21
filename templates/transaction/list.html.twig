@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Transakcje{% endblock %}
+
+{% block body %}
+    {% include '_partials/navigation.html.twig' %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                    Lista transakcji
+                </div>
+                <div class="panel-body">
+                    {% if transactions is defined and transactions %}
+                        <table class="table transactions-list table-striped">
+                            <tbody>
+                                {% for transaction in transactions %}
+                                    <tr>
+                                        <td>
+                                            {{ transaction.title }}
+                                        </td>
+                                        <td class="text-right transaction-value-{% if transaction.value > 0 %}positive{% else %}negative{% endif %}">
+                                            {{ transaction.value }} PLN
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <div class="alert alert-info">
+                            <p>Brak transakcji.</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

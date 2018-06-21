@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zaplanowane{% endblock %}
+
+{% block body %}
+    {% include '_partials/navigation.html.twig' %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                    Lista zaplanowanych
+                </div>
+                <div class="panel-body">
+                    {% if transactions is defined and transactions %}
+
+                    {% else %}
+                        <div class="alert alert-info">
+                            <p>Brak transakcji.</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
