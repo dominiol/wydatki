@@ -2,6 +2,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    password_hash: '%env(PASSWORD_MD5_HASH)%'
 
 services:
     # default configuration for services in *this* file
@@ -30,3 +31,7 @@ services:
     App\Util\TransactionManager:
         arguments:
             $em: '@doctrine.orm.entity_manager'
+
+    App\Util\AuthTools:
+        arguments:
+            $passwordHash: '%password_hash%'

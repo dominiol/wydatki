@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Util\AuthTools;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
@@ -13,10 +14,12 @@ class SecurityController extends Controller
     /**
      * @Route("/authenticate", name="authenticate")
      */
-    public function authenticate(Request $request)
+    public function authenticate(Request $request, AuthTools $authTools)
     {
         if ($request->isMethod('POST')) {
-            if ($request->get('pin') == '1234') {
+            $password = $request->get('pin');
+
+            if ($authTools->isValidPassword($password)) {
                 $token = new UsernamePasswordToken('user', null, 'main', ['ROLE_USER']);
 
                 $this->get('security.token_storage')->setToken($token);
