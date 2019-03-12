@@ -5,7 +5,7 @@ A simple PHP/Symfony application to manage personal finances.
 Installation
 ---
 ```
-git clone https://github.com/dominiol/wydatki.git
+git clone https://github.com/dzakrzew/wydatki.git
 cd wydatki
 composer install
 ```
