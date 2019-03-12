@@ -2,6 +2,8 @@ wydatki (under construction)
 ===
 A simple PHP/Symfony application to manage personal finances.
 
+![Screenshot](https://i.imgur.com/nBRGIsn.png)
+
 Installation
 ---
 ```
